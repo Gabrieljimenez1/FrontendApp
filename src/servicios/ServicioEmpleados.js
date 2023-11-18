@@ -8,6 +8,10 @@ class ServicioEmpleados {
     return axios.get(BASE_URL_API_EMPLEADO_TODOS, {
       headers: {
         "Content-Type": "application/json",
+      },
+      auth: {
+        username: "Recursos_humanos",
+        password: "12345",
       }
     });
   }
