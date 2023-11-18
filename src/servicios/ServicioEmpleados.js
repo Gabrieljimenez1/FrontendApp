@@ -17,4 +17,5 @@ class ServicioEmpleados {
   }
 }
 
-export default new ServicioEmpleados();
+const servicioEmpleados = new ServicioEmpleados();
+export default servicioEmpleados;
