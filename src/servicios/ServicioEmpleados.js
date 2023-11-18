@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL_API_EMPLEADO_TODOS = "http://localhost:8080/perfil/buscar/todos";
+const BASE_URL_API_EMPLEADO_TODOS =
+  "http://localhost:8080/empleado/buscar/todos";
 
 class ServicioEmpleados {
   getEmpleados() {
@@ -8,6 +9,10 @@ class ServicioEmpleados {
       headers: {
         "Content-Type": "application/json",
       },
+      auth: {
+        username: "Recursos_humanos",
+        password: "12345",
+      }
     });
   }
 }
