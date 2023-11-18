@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BASE_URL_API_EMPLEADO_TODOS =
-  "http://localhost:8080/perfil/buscar/todos";
+  "http://localhost:8080/empleado/buscar/todos";
 
 class ServicioEmpleados {
   getEmpleados() {
