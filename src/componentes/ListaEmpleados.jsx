@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ServicioEmpleado from "../servicios/ServicioEmpleado";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// eslint-disable-next-line
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class ListaEmpleados extends Component {
   constructor(props) {
