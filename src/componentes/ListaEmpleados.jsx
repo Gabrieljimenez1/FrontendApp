@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ServicioEmpleados from "../servicios/ServicioEmpleados";
+import ServicioEmpleado from "../servicios/ServicioEmpleado";
 
 class ListaEmpleados extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class ListaEmpleados extends Component {
   }
 
   componentDidMount() {
-    ServicioEmpleados.getEmpleados().then((res) => {
+    ServicioEmpleado.getEmpleadoTodos().then((res) => {
       this.setState({ empleados: res.data });
     });
   }
