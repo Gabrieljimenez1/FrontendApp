@@ -11,22 +11,20 @@ function App() {
   return (
     <div>
       <Router>
-          
-            <HeaderComponent />
-              <div className="container">
-                <Routes>
-                  <Route path="/" exact  element={<ListaEmpleados />}></Route>
-                  <Route path="/empleados" element={<ListaEmpleados />}></Route>
-                  <Route path="/roles" element={<ListaRoles /> }></Route>
-                  <Route path="/certificados" element={<ListaCertificados /> }></Route>
-                  <Route path="/perfiles" element={<ListaPerfiles /> }></Route>
-                </Routes>
-              </div>
-            <FooterComponent />
-          
+        <HeaderComponent />
+        <div className="container">
+          <Routes>
+            <Route path="/" exact element={<ListaEmpleados />}></Route>
+            <Route path="/empleados" element={<ListaEmpleados />}></Route>
+            <Route path="/roles" element={<ListaRoles />}></Route>
+            <Route path="/certificados" element={<ListaCertificados />}></Route>
+            <Route path="/perfiles" element={<ListaPerfiles />}></Route>
+          </Routes>
+        </div>
+        <FooterComponent />
       </Router>
     </div>
-    
+
   );
 }
 
