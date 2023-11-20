@@ -21,7 +21,7 @@ class ListaEmpleados extends Component {
         <h2 className="text-center">Lista Empleados</h2>
         <div className="row">
           <table className="table table-striped table-bordered">
-            <thread>
+            <tbody>
               <tr>
                 <th>Empleado ID</th>
                 <th>Empleado Nombre</th>
@@ -31,9 +31,8 @@ class ListaEmpleados extends Component {
                 <th>Direccion Empleado</th>
                 <th>Cedula Empleado</th>
                 <th>ID_Rol Empleado</th>
-                <th>Certificados Empleado</th>
               </tr>
-            </thread>
+            </tbody>
 
             <tbody>
               {this.state.empleados.map((empleado) => (
@@ -45,8 +44,7 @@ class ListaEmpleados extends Component {
                   <td>{empleado.telefono}</td>
                   <td>{empleado.direccion}</td>
                   <td>{empleado.cedula}</td>
-                  <td>{empleado.id_rol}</td>
-                  <td>{empleado.certificados}</td>
+                  <td>{empleado.idRol}</td>
                 </tr>
               ))}
             </tbody>
