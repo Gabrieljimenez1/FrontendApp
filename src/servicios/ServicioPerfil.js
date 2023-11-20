@@ -1,4 +1,5 @@
 import axios from "axios";
+import ServicioAuth from "../servicios/ServicioAuth";
 
 const BASE_URL_PERFIL_BUSCAR_TODOS = "http://localhost:8080/perfil/buscar/todos";
 const BASE_URL_PERFIL_BUSCAR_ID = "http://localhost:8080/perfil/buscar/id?id=";

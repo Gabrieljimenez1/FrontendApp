@@ -1,4 +1,5 @@
 import axios from "axios";
+import ServicioAuth from "../servicios/ServicioAuth";
 
 const BASE_URL_CERTIFICADO_BUSCAR_TODOS = "http://localhost:8080/certificado/buscar/todos";
 const BASE_URL_CERTIFICADO_BUSCAR_ID = "http://localhost:8080/certificado/buscar/id?id=";

@@ -1,4 +1,5 @@
 import axios from "axios";
+import ServicioAuth from "../servicios/ServicioAuth";
 
 const BASE_URL_ROL_BUSCAR_TODOS = "http://localhost:8080/rol/buscar/todos";
 const BASE_URL_ROL_BUSCAR_ID = "http://localhost:8080/rol/buscar/id?id=";
