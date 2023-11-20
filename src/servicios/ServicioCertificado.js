@@ -13,8 +13,8 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
@@ -25,20 +25,27 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
 
-  crearCertificado() {
+  crearCertificado(id, tipo, descripcion, idEmpleado, fechaExpedicion, entidadExpedidora) {
     return axios.post(BASE_URL_CERTIFICADO_CREAR, {
+      "id": id,
+      "tipo": tipo,
+      "descripcion": descripcion,
+      "idEmpleado": idEmpleado,
+      "fechaExpedicion": fechaExpedicion,
+      "entidadExpedidora": entidadExpedidora
+    }, {
       headers: {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
@@ -49,8 +56,8 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
