@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+// eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import servicioEmpleado from '../servicios/ServicioEmpleado';
 export default class CrearEmpleadoComponent extends Component {
@@ -33,7 +33,7 @@ export default class CrearEmpleadoComponent extends Component {
         console.log('empleado => ' + JSON.stringify(empleado));
 
         servicioEmpleado.crearEmpleado(empleado).then(res => {
-            <Link to="/empleados"></Link>
+            this.props.history.push('/empleados');
         });
     }
 
