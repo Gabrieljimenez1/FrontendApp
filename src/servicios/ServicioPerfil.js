@@ -1,4 +1,5 @@
 import axios from "axios";
+import ServicioAuth from "../servicios/ServicioAuth";
 
 const BASE_URL_PERFIL_BUSCAR_TODOS = "http://localhost:8080/perfil/buscar/todos";
 const BASE_URL_PERFIL_BUSCAR_ID = "http://localhost:8080/perfil/buscar/id?id=";
@@ -14,8 +15,8 @@ class ServicioPerfil {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
@@ -26,32 +27,42 @@ class ServicioPerfil {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
 
-  crearPerfil() {
+  crearPerfil(id, idEmpleado, habilidades, anosExperiencia) {
     return axios.post(BASE_URL_PERFIL_CREAR, {
+      "id": id,
+      "idEmpleado": idEmpleado,
+      "habilidades": habilidades,
+      "anosExperiencia": anosExperiencia
+    }, {
       headers: {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
 
-  actualizarPerfil() {
+  actualizarPerfil(id, idEmpleado, habilidades, anosExperiencia) {
     return axios.put(BASE_URL_PERFIL_ACTUALIZAR, {
+      "id": id,
+      "idEmpleado": idEmpleado,
+      "habilidades": habilidades,
+      "anosExperiencia": anosExperiencia
+    }, {
       headers: {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
@@ -62,8 +73,8 @@ class ServicioPerfil {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }

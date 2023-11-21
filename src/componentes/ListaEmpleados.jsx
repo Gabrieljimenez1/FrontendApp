@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ServicioEmpleado from "../servicios/ServicioEmpleado";
+// eslint-disable-next-line
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 
 class ListaEmpleados extends Component {
@@ -59,6 +61,33 @@ class ListaEmpleados extends Component {
               ))}
             </tbody>
           </table>
+        </div>
+        <div>
+          <ul>
+            <Link to="/certificados">
+              <button className="btn btn-primary"> Buscar por ID</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/crear-empleado">
+              <button className="btn btn-primary"> Agregar Empleado</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/certificados">
+              <button className="btn btn-primary"> Actualizar Información Personal</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/certificados">
+              <button className="btn btn-primary"> Actualizar Rol</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/certificados">
+              <button className="btn btn-primary"> Eliminar Empleado</button>
+            </Link>
+          </ul>
         </div>
       </div>
     );

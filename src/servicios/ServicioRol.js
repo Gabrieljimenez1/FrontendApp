@@ -1,4 +1,5 @@
 import axios from "axios";
+import ServicioAuth from "../servicios/ServicioAuth";
 
 const BASE_URL_ROL_BUSCAR_TODOS = "http://localhost:8080/rol/buscar/todos";
 const BASE_URL_ROL_BUSCAR_ID = "http://localhost:8080/rol/buscar/id?id=";
@@ -14,8 +15,8 @@ class ServicioRoles {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
@@ -26,32 +27,38 @@ class ServicioRoles {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
 
-  crearRol() {
+  crearRol(id, responsabilidades) {
     return axios.post(BASE_URL_ROL_CREAR, {
+      "ID": id,
+      "responsabilidades": responsabilidades
+    }, {
       headers: {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
 
-  actualizarRol() {
+  actualizarRol(id, responsabilidades) {
     return axios.put(BASE_URL_ROL_ACTUALIZAR, {
+      "ID": id,
+      "responsabilidades": responsabilidades
+    }, {
       headers: {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
@@ -62,8 +69,8 @@ class ServicioRoles {
         "Content-Type": "application/json",
       },
       auth: {
-        username: "Recursos_humanos",
-        password: "12345",
+        username: ServicioAuth.getUser(),
+        password: ServicioAuth.getPass(),
       }
     });
   }
