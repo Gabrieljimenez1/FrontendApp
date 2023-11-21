@@ -3,12 +3,15 @@ import ServicioEmpleado from "../servicios/ServicioEmpleado";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
+
 class ListaEmpleados extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+
     this.state = {
-      empleados: [],
-    };
+        empleados: [] 
+    }
+    this.crearEmpleado = this.crearEmpleado.bind(this);
   }
 
   componentDidMount() {
@@ -17,10 +20,17 @@ class ListaEmpleados extends Component {
     });
   }
 
+  crearEmpleado() {
+      this.props.history.push('/crear-empleado');
+  }
+
   render() {
     return (
       <div>
         <h2 className="text-center">Lista Empleados</h2>
+        <div className="row">
+          <button className="btn btn-primary" onClick={this.crearEmpleado}> Agregar Empleado</button>
+        </div>
         <div className="row">
           <table className="table table-striped table-bordered">
             <tbody>
@@ -59,7 +69,7 @@ class ListaEmpleados extends Component {
             </Link>
           </ul>
           <ul>
-            <Link to="/certificados">
+            <Link to="/crear-empleado">
               <button className="btn btn-primary"> Agregar Empleado</button>
             </Link>
           </ul>
@@ -84,4 +94,4 @@ class ListaEmpleados extends Component {
   }
 }
 
-export default ListaEmpleados;
+export default (ListaEmpleados);

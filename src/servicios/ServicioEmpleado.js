@@ -35,17 +35,8 @@ class ServicioEmpleado {
     });
   }
 
-  crearEmpleado(id, nombre, edad, correo, telefono, idRol, direccion, cedula) {
-    return axios.post(BASE_URL_EMPLEADO_CREAR, {
-      "id": id,
-      "nombre": nombre,
-      "edad": edad,
-      "correo": correo,
-      "telefono": telefono,
-      "idRol": idRol,
-      "direccion": direccion,
-      "cedula": cedula
-    }, {
+  crearEmpleado(empleado) {
+    return axios.post(BASE_URL_EMPLEADO_CREAR, empleado,  {
       headers: {
         "Content-Type": "application/json",
       },
