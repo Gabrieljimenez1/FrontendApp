@@ -33,11 +33,8 @@ class ServicioRoles {
     });
   }
 
-  crearRol(id, responsabilidades) {
-    return axios.post(BASE_URL_ROL_CREAR, {
-      "ID": id,
-      "responsabilidades": responsabilidades
-    }, {
+  crearRol(rol) {
+    return axios.post(BASE_URL_ROL_CREAR, rol, {
       headers: {
         "Content-Type": "application/json",
       },

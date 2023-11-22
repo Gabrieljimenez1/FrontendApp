@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import ServicioEmpleado from "../servicios/ServicioEmpleado";
+import ServicioEmpleado from "../../servicios/ServicioEmpleado";
 // eslint-disable-next-line
-import { BrowserRouter as Router, Link, useHistory, redirect, Navigate } from "react-router-dom";
-
+import {
+  BrowserRouter as Router,
+  Link,
+  withRouter
+} from "react-router-dom";
 
 class ListaEmpleados extends Component {
   constructor(props) {
@@ -19,17 +22,18 @@ class ListaEmpleados extends Component {
     });
   }
 
-  crearEmpleado() {
-    this.props.history.push('/crear-empleado');
+  crearEmpleado(empleadoId) {
+    this.props.history.replace(`/crear-empleado/${empleadoId}`);
   }
+
+  
 
   render() {
     return (
       <div>
         <h2 className="text-center">Lista Empleados</h2>
         <div className="row">
-          <button className="btn btn-primary" onClick={this.crearEmpleado}>
-            {" "}
+          <button className="btn btn-primary" onClick={() => this.crearEmpleado("1367")}>
             Agregar Empleado
           </button>
         </div>
@@ -84,7 +88,7 @@ class ListaEmpleados extends Component {
             </Link>
           </ul>
           <ul>
-            <Link to="/certificados">
+            <Link to="/actualizar-rol-empleado">
               <button className="btn btn-primary"> Actualizar Rol</button>
             </Link>
           </ul>
