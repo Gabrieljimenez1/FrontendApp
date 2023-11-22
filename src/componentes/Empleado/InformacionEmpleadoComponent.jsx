@@ -30,7 +30,7 @@ export default class InformacionEmpleadoComponent extends Component {
     };
 
     cargarEmpleado = () => {
-        if (this.state.id != "") {
+        if (this.state.id !== "") {
             servicioEmpleado.getEmpleadoFromId(this.state.id).then((res) => {
                 this.setState({ empleado: res.data });
             });
@@ -75,31 +75,31 @@ export default class InformacionEmpleadoComponent extends Component {
                                 <div className='card-body'>
                                     <div className='row'>
                                         <label>Nombre del empleado:</label>
-                                        <div>{(this.state.empleado.length != 0) ? this.state.empleado[0].nombre : "ID inexistente"}</div>
+                                        <div>{(this.state.empleado.length !== 0) ? this.state.empleado[0].nombre : "ID inexistente"}</div>
                                     </div>
                                     <div className='row'>
                                         <label>Edad del empleado:</label>
-                                        <div>{(this.state.empleado.length != 0) ? this.state.empleado[0].edad : "ID inexistente"}</div>
+                                        <div>{(this.state.empleado.length !== 0) ? this.state.empleado[0].edad : "ID inexistente"}</div>
                                     </div>
                                     <div className='row'>
                                         <label>Correo del empleado:</label>
-                                        <div>{(this.state.empleado.length != 0) ? this.state.empleado[0].correo : "ID inexistente"}</div>
+                                        <div>{(this.state.empleado.length !== 0) ? this.state.empleado[0].correo : "ID inexistente"}</div>
                                     </div>
                                     <div className='row'>
                                         <label>Telefono del empleado:</label>
-                                        <div>{(this.state.empleado.length != 0) ? this.state.empleado[0].telefono : "ID inexistente"}</div>
+                                        <div>{(this.state.empleado.length !== 0) ? this.state.empleado[0].telefono : "ID inexistente"}</div>
                                     </div>
                                     <div className='row'>
                                         <label>Direccion del empleado:</label>
-                                        <div>{(this.state.empleado.length != 0) ? this.state.empleado[0].direccion : "ID inexistente"}</div>
+                                        <div>{(this.state.empleado.length !== 0) ? this.state.empleado[0].direccion : "ID inexistente"}</div>
                                     </div>
                                     <div className='row'>
                                         <label>Cedula del empleado:</label>
-                                        <div>{(this.state.empleado.length != 0) ? this.state.empleado[0].cedula : "ID inexistente"}</div>
+                                        <div>{(this.state.empleado.length !== 0) ? this.state.empleado[0].cedula : "ID inexistente"}</div>
                                     </div>
                                     <div className='row'>
                                         <label>ID_Rol del empleado:</label>
-                                        <div>{(this.state.empleado.length != 0) ? this.state.empleado[0].idRol : "ID inexistente"}</div>
+                                        <div>{(this.state.empleado.length !== 0) ? this.state.empleado[0].idRol : "ID inexistente"}</div>
                                     </div>
                                     <br />
 
