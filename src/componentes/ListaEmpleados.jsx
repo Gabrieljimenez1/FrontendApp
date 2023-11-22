@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ServicioEmpleado from "../servicios/ServicioEmpleado";
 // eslint-disable-next-line
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, useHistory, redirect } from "react-router-dom";
+
 
 
 class ListaEmpleados extends Component {
@@ -21,7 +22,7 @@ class ListaEmpleados extends Component {
   }
 
   crearEmpleado() {
-      this.props.history.push('/crear-empleado');
+    this.props.history.push('/crear-empleado');
   }
 
   render() {
@@ -84,7 +85,7 @@ class ListaEmpleados extends Component {
             </Link>
           </ul>
           <ul>
-            <Link to="/certificados">
+            <Link to="/eliminar-empleado">
               <button className="btn btn-primary"> Eliminar Empleado</button>
             </Link>
           </ul>

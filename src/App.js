@@ -7,6 +7,7 @@ import ListaRoles from "./componentes/ListaRoles";
 import ListaCertificados from "./componentes/ListaCertificados";
 import ListaPerfiles from "./componentes/ListaPerfiles";
 import CrearEmpleadoComponent from "./componentes/CrearEmpleadoComponent";
+import EliminarEmpleadoComponent from "./componentes/EliminarEmpleadoComponent";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                   <Route path="/" exact element={<ListaEmpleados />}></Route>
                   <Route path="/empleados" element={<ListaEmpleados />}></Route>
                   <Route path="/crear-empleado" element={<CrearEmpleadoComponent />}></Route>
+                  <Route path="/eliminar-empleado" element={<EliminarEmpleadoComponent />}></Route>
                   <Route path="/roles" element={<ListaRoles /> }></Route>
                   <Route path="/certificados" element={<ListaCertificados /> }></Route>
                   <Route path="/perfiles" element={<ListaPerfiles /> }></Route>
