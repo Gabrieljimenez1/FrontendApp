@@ -1,49 +1,73 @@
-import React, { useState } from "react";
+import React, { Component } from 'react'
 import ServicioAuth from "../servicios/ServicioAuth";
-import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: "",
+      pass: "",
+    };
+    this.changeUserHandler = this.changeUserHandler.bind(this);
+    this.changePassHandler = this.changePassHandler.bind(this);
+    this.autenticar = this.autenticar.bind(this)
+
+  }
+
+  autenticar = async (e) => {
     e.preventDefault();
-    const isAuthenticated = ServicioAuth.testAuth(username, password);
+    var isAuthenticated = await ServicioAuth.testAuth(this.state.user, this.state.pass)
+    console.log("Is auth " + isAuthenticated)
     if (isAuthenticated) {
-      navigate("/");
+      window.location.href = "/pagina-inicial";
     } else {
       alert("Credenciales incorrectas. Inténtalo de nuevo.");
     }
-  };
+  }
 
-  return (
-    <div className="Login">
-      <h1>Página de inicio de sesión</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Usuario:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Contraseña:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <br />
-        <button type="submit">Iniciar sesión</button>
-      </form>
-    </div>
-  );
-};
+  changeUserHandler = (event) => {
+    this.setState({ user: event.target.value });
+  }
 
-const login = new Login();
-export default login;
+  changePassHandler = (event) => {
+    this.setState({ pass: event.target.value });
+  }
+
+  render() {
+    return (
+      <div className="Login">
+        <h1>Página de inicio de sesion</h1>
+        <form>
+          <div className="form-group">
+            <label>Usuario</label>
+            <input
+              placeholder="Usuario"
+              name="usuario"
+              className="form-control"
+              value={this.state.user}
+              onChange={this.changeUserHandler}
+            />
+          </div>
+          <div className="form-group">
+            <label>Contraseña</label>
+            <input
+              placeholder="Contraseña"
+              name="contraseña"
+              className="form-control"
+              value={this.state.pass}
+              onChange={this.changePassHandler}
+            />
+          </div>
+          <br />
+          <button
+            className="btn btn-success"
+            onClick={this.autenticar}
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    )
+  }
+}

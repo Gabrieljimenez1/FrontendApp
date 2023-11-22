@@ -1,11 +1,12 @@
 import axios from "axios";
-import ServicioAuth from "../servicios/ServicioAuth";
 
 const BASE_URL_CERTIFICADO_BUSCAR_TODOS = "http://localhost:8080/certificado/buscar/todos";
 const BASE_URL_CERTIFICADO_BUSCAR_ID = "http://localhost:8080/certificado/buscar/id?id=";
 const BASE_URL_CERTIFICADO_CREAR = "http://localhost:8080/certificado/subir";
 const BASE_URL_CERTIFICADO_ELIMINAR = "http://localhost:8080/certificado/eliminar/id?id=";
 
+const USER = "Recursos_humanos"
+const PASS = "12345"
 
 class ServicioCertificado {
   getCertificadoTodos() {
@@ -14,8 +15,8 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       }
     });
   }
@@ -26,8 +27,8 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       }
     });
   }
@@ -45,8 +46,8 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       }
     });
   }
@@ -57,8 +58,8 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       }
     });
   }

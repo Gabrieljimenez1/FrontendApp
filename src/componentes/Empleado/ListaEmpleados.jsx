@@ -79,7 +79,7 @@ class ListaEmpleados extends Component {
           <ul>
             <Link to="/actualizar-empleado">
               <button className="btn btn-primary">
-                Actualizar Información Personal
+                Actualizar Informacion Personal
               </button>
             </Link>
           </ul>
