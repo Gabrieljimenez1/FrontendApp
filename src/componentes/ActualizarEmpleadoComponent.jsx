@@ -168,7 +168,7 @@ class ActualizarEmpleadoComponent extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label>idRol:</label>
+                    <label>IDRol:</label>
                     <input
                       placeholder="idRol"
                       name="idrol"
@@ -189,7 +189,7 @@ class ActualizarEmpleadoComponent extends Component {
                       className="btn btn-danger"
                       style={{ marginLeft: "10px" }}
                     >
-                      Cancelar
+                      Regresar
                     </button>
                   </Link>
                 </form>
