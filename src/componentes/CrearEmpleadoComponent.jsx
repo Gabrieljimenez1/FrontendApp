@@ -158,7 +158,7 @@ export default class CrearEmpleadoComponent extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label>idRol:</label>
+                    <label>IDRol:</label>
                     <input
                       placeholder="idRol"
                       name="idrol"
@@ -179,7 +179,7 @@ export default class CrearEmpleadoComponent extends Component {
                       className="btn btn-danger"
                       style={{ marginLeft: "10px" }}
                     >
-                      Cancelar
+                      Regresar
                     </button>
                   </Link>
                 </form>
