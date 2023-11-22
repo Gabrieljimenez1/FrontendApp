@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import ServicioEmpleado from "../servicios/ServicioEmpleado";
 // eslint-disable-next-line
-import { BrowserRouter as Router, Link } from "react-router-dom";
-
+import { BrowserRouter as Router, Link, Navigate } from "react-router-dom";
 
 class ListaEmpleados extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-        empleados: [] 
-    }
+      empleados: [],
+    };
     this.crearEmpleado = this.crearEmpleado.bind(this);
+    this.editarEmpleado = this.editarEmpleado.bind(this);
   }
-
   componentDidMount() {
     ServicioEmpleado.getEmpleadoTodos().then((res) => {
       this.setState({ empleados: res.data });
@@ -21,7 +20,11 @@ class ListaEmpleados extends Component {
   }
 
   crearEmpleado() {
-      this.props.history.push('/crear-empleado');
+    Navigate("/crear-empleado");
+  }
+
+  editarEmpleado(id) {
+    this.props.history.push(`/actualizar-empleado/${id}`);
   }
 
   render() {
@@ -29,7 +32,10 @@ class ListaEmpleados extends Component {
       <div>
         <h2 className="text-center">Lista Empleados</h2>
         <div className="row">
-          <button className="btn btn-primary" onClick={this.crearEmpleado}> Agregar Empleado</button>
+          <button className="btn btn-primary" onClick={this.crearEmpleado}>
+            {" "}
+            Agregar Empleado
+          </button>
         </div>
         <div className="row">
           <table className="table table-striped table-bordered">
@@ -43,6 +49,7 @@ class ListaEmpleados extends Component {
                 <th>Direccion Empleado</th>
                 <th>Cedula Empleado</th>
                 <th>ID_Rol Empleado</th>
+                <th>Acciones</th>
               </tr>
             </tbody>
 
@@ -57,6 +64,14 @@ class ListaEmpleados extends Component {
                   <td>{empleado.direccion}</td>
                   <td>{empleado.cedula}</td>
                   <td>{empleado.idRol}</td>
+                  <td>
+                    <button
+                      onClick={() => this.editarEmpleado(empleado.id)}
+                      className="btn btn-info"
+                    >
+                      Actualizar
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -74,8 +89,10 @@ class ListaEmpleados extends Component {
             </Link>
           </ul>
           <ul>
-            <Link to="/certificados">
-              <button className="btn btn-primary"> Actualizar Información Personal</button>
+            <Link to="/actualizar-empleado">
+              <button className="btn btn-primary">
+                Actualizar Información Personal
+              </button>
             </Link>
           </ul>
           <ul>
@@ -94,4 +111,4 @@ class ListaEmpleados extends Component {
   }
 }
 
-export default (ListaEmpleados);
+export default ListaEmpleados;

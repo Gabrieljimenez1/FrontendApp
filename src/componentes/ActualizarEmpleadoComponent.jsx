@@ -2,7 +2,8 @@ import React, { Component } from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import servicioEmpleado from "../servicios/ServicioEmpleado";
-export default class CrearEmpleadoComponent extends Component {
+
+class ActualizarEmpleadoComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -24,10 +25,10 @@ export default class CrearEmpleadoComponent extends Component {
     this.changeDireccionHandler = this.changeDireccionHandler.bind(this);
     this.changeCedulaHandler = this.changeCedulaHandler.bind(this);
     this.changeIdRolHandler = this.changeIdRolHandler.bind(this);
-    this.crearEmpleado = this.crearEmpleado.bind(this);
+    this.actualizarEmpleado = this.actualizarEmpleado.bind(this);
   }
 
-  crearEmpleado = (e) => {
+  actualizarEmpleado = (e) => {
     e.preventDefault();
     let empleado = {
       id: this.state.id,
@@ -40,10 +41,19 @@ export default class CrearEmpleadoComponent extends Component {
       idRol: this.state.idRol,
     };
     console.log("empleado => " + JSON.stringify(empleado));
-
-    servicioEmpleado.crearEmpleado(empleado).then((res) => {
-      this.props.history.push("/empleados");
-    });
+    servicioEmpleado
+      .actualizarEmpleadoInfo(
+        this.state.id,
+        this.state.nombre,
+        this.state.edad,
+        this.state.correo,
+        this.state.telefono,
+        this.state.direccion,
+        this.state.cedula
+      )
+      .then((res) => {
+        this.props.history.push("/empleados");
+      });
   };
 
   changeIdHandler = (event) => {
@@ -84,7 +94,7 @@ export default class CrearEmpleadoComponent extends Component {
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">
-              <h3 className="text-center">Agregar Empleado</h3>
+              <h3 className="text-center">Actualizar Empleado</h3>
               <div className="card-body">
                 <form>
                   <div className="form-group">
@@ -169,7 +179,7 @@ export default class CrearEmpleadoComponent extends Component {
                   </div>
                   <button
                     className="btn btn-success"
-                    onClick={this.crearEmpleado}
+                    onClick={this.actualizarEmpleado}
                   >
                     Guardar empleado
                   </button>
@@ -191,3 +201,5 @@ export default class CrearEmpleadoComponent extends Component {
     );
   }
 }
+
+export default ActualizarEmpleadoComponent;
