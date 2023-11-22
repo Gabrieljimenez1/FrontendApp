@@ -54,7 +54,7 @@ class ListaRoles extends Component {
           <ul>
             <Link to="/actualizar-empleado">
               <button className="btn btn-primary">
-                Actualizar Información del Rol
+                Actualizar Informacion del Rol
               </button>
             </Link>
           </ul>
