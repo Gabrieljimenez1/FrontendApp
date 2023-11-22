@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import servicioEmpleado from "../servicios/ServicioEmpleado";
+import servicioEmpleado from "../../servicios/ServicioEmpleado";
 
 class ActualizarEmpleadoComponent extends Component {
   constructor(props) {

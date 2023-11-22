@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ServicioPerfil from "../servicios/ServicioPerfil";
+import ServicioPerfil from "../../servicios/ServicioPerfil";
 
 class ListaPerfiles extends Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ServicioCertificado from "../servicios/ServicioCertificado";
+import ServicioCertificado from "../../servicios/ServicioCertificado";
 
 class ListaCertificados extends Component {
   constructor(props) {

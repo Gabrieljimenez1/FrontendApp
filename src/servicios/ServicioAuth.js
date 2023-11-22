@@ -7,8 +7,8 @@ class ServicioAuth {
   pass = "12345";
 
   testAuth(new_user, new_pass) {
-    ServicioAuth.user = new_user;
-    ServicioAuth.pass = new_pass;
+    this.user = new_user;
+    this.pass = new_pass;
 
     try {
       axios.get(BASE_URL_EMPLEADO_BUSCAR_TODOS, {
@@ -16,8 +16,8 @@ class ServicioAuth {
           "Content-Type": "application/json",
         },
         auth: {
-          username: ServicioAuth.user,
-          password: ServicioAuth.pass,
+          username: this.user,
+          password: this.pass,
         }
       });
       

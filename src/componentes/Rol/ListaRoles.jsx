@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import ServicioRol from "../servicios/ServicioRol";
+import ServicioRol from "../../servicios/ServicioRol";
+// eslint-disable-next-line
+import {BrowserRouter as Router, Link} from "react-router-dom";
 
 class ListaRoles extends Component {
   constructor(props) {
@@ -37,6 +39,30 @@ class ListaRoles extends Component {
               ))}
             </tbody>
           </table>
+        </div>
+        <div>
+          <ul>
+            <Link to="/ver-empleado">
+              <button className="btn btn-primary"> Buscar por ID</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/agregar-rol">
+              <button className="btn btn-primary"> Agregar Rol</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/actualizar-empleado">
+              <button className="btn btn-primary">
+                Actualizar Información del Rol
+              </button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/eliminar-empleado">
+              <button className="btn btn-primary"> Eliminar Rol</button>
+            </Link>
+          </ul>
         </div>
       </div>
     );

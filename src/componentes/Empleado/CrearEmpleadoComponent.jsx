@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import servicioEmpleado from "../servicios/ServicioEmpleado";
+import servicioEmpleado from "../../servicios/ServicioEmpleado";
 export default class CrearEmpleadoComponent extends Component {
   constructor(props) {
     super(props);
@@ -42,7 +42,7 @@ export default class CrearEmpleadoComponent extends Component {
     console.log("empleado => " + JSON.stringify(empleado));
 
     servicioEmpleado.crearEmpleado(empleado).then((res) => {
-      this.props.history.push("/empleados");
+      this.props.history && this.props.history.push("/empleados");
     });
   };
 

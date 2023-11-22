@@ -1,41 +1,29 @@
 import React, { Component } from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import servicioEmpleado from "../servicios/ServicioEmpleado";
+import servicioEmpleado from "../../servicios/ServicioEmpleado";
 
-class ActualizarRolEmpleadoComponent extends Component {
+export default class EliminarEmpleadoComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       id: "",
-      idRol: "",
     };
     this.changeIdHandler = this.changeIdHandler.bind(this);
-    this.changeIdRolHandler = this.changeIdRolHandler.bind(this);
-    this.actualizarRolEmpleado = this.actualizarRolEmpleado.bind(this);
+    this.eliminarEmpleado = this.eliminarEmpleado.bind(this);
   }
-
-  actualizarRolEmpleado = (e) => {
-    e.preventDefault();
-    let empleado = {
-      id: this.state.id,
-      idRol: this.state.idRol,
-    };
-    console.log("empleado => " + JSON.stringify(empleado));
-    servicioEmpleado
-      .actualizarEmpleadoRol(this.state.id, this.state.idRol)
-      .then((res) => {
-        Link("/empleados");
-      });
-  };
 
   changeIdHandler = (event) => {
     this.setState({ id: event.target.value });
   };
 
-  changeIdRolHandler = (event) => {
-    this.setState({ idRol: event.target.value });
+  eliminarEmpleado = (e) => {
+    e.preventDefault();
+    console.log("empleado => " + this.state.id);
+    servicioEmpleado.eliminarEmpleado(this.state.id).then((res) => {
+      this.props.history.push("/empleados");
+    });
   };
 
   render() {
@@ -44,7 +32,7 @@ class ActualizarRolEmpleadoComponent extends Component {
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">
-              <h3 className="text-center">Actualizar Rol Empleado</h3>
+              <h3 className="text-center">Agregar Empleado</h3>
               <div className="card-body">
                 <form>
                   <div className="form-group">
@@ -57,21 +45,12 @@ class ActualizarRolEmpleadoComponent extends Component {
                       onChange={this.changeIdHandler}
                     />
                   </div>
-                  <div className="form-group">
-                    <label>iDRol:</label>
-                    <input
-                      placeholder="idRol"
-                      name="idrol"
-                      className="form-control"
-                      value={this.state.idRol}
-                      onChange={this.changeIdRolHandler}
-                    />
-                  </div>
+
                   <button
                     className="btn btn-success"
-                    onClick={this.actualizarRolEmpleado}
+                    onClick={this.eliminarEmpleado}
                   >
-                    Guardar empleado
+                    Eliminar empleado
                   </button>
 
                   <Link to="/empleados">
@@ -91,5 +70,3 @@ class ActualizarRolEmpleadoComponent extends Component {
     );
   }
 }
-
-export default ActualizarRolEmpleadoComponent;
