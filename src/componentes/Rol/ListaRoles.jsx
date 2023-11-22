@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import ServicioRol from "../../servicios/ServicioRol";
 // eslint-disable-next-line
-import {
-  BrowserRouter as Router,
-  Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Link} from "react-router-dom";
 
 class ListaRoles extends Component {
   constructor(props) {
