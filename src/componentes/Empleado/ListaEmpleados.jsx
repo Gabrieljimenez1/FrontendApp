@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import ServicioEmpleado from "../../servicios/ServicioEmpleado";
 // eslint-disable-next-line
-import {
-  BrowserRouter as Router,
-  Link,
-  withRouter
-} from "react-router-dom";
+import {BrowserRouter as Router, Link } from "react-router-dom";
 
 class ListaEmpleados extends Component {
   constructor(props) {
@@ -23,7 +19,7 @@ class ListaEmpleados extends Component {
   }
 
   crearEmpleado(empleadoId) {
-    this.props.history.replace(`/crear-empleado/${empleadoId}`);
+    window.location.href = `/crear-empleado/${empleadoId}`;
   }
 
   
