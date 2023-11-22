@@ -8,6 +8,7 @@ const PaginaInicial = () => {
         Maneje los empleados, sus roles y sus certificados o perfiles asociados
         de su empresa.
       </p>
+      <small>All Rights Reserved 2023 @RHManager</small>
     </div>
   );
 };
