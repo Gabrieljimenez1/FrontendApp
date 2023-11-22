@@ -67,7 +67,7 @@ class ListaEmpleados extends Component {
         </div>
         <div>
           <ul>
-            <Link to="/certificados">
+            <Link to="/ver-empleado">
               <button className="btn btn-primary"> Buscar por ID</button>
             </Link>
           </ul>
