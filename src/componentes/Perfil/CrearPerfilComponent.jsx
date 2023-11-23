@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import servicioEmpleado from "../../servicios/ServicioPerfil";
+import servicioPerfil from "../../servicios/ServicioPerfil";
 
 export default class CrearPerfilComponent extends Component {
   constructor(props) {
@@ -10,14 +10,14 @@ export default class CrearPerfilComponent extends Component {
 
     this.state = {
       id: "",
-      empleadoId: "",
+      idEmpleado: "",
       habilidades: "",
-      años_de_experiencia: ""
+      anosExperiencia: ""
     };
     this.changeIdHandler = this.changeIdHandler.bind(this);
     this.changeEmpleadoIdHandler = this.changeEmpleadoIdHandler.bind(this);
     this.changeHabilidadesHandler = this.changeHabilidadesHandler.bind(this);
-    this.changeAños_de_experienciaHandler = this.changeAños_de_experienciaHandler.bind(this);
+    this.changeAños_de_ExperienciaHandler = this.changeAños_de_ExperienciaHandler.bind(this);
     this.crearPerfil = this.crearPerfil.bind(this);
   }
 
@@ -25,13 +25,13 @@ export default class CrearPerfilComponent extends Component {
     e.preventDefault();
     let perfil = {
       id: this.state.id,
-      empleadoId: this.state.empleadoId,
+      idEmpleado: this.state.idEmpleado,
       habilidades: this.state.habilidades,
-      años_de_experiencia: this.state.años_de_experiencia,
+      anosExperiencia: this.state.anosExperiencia
     };
     console.log("perfil => " + JSON.stringify(perfil));
 
-    servicioEmpleado.crearPerfil(perfil).then((res) => {
+    servicioPerfil.crearPerfil(perfil).then((res) => {
       window.location.href = "/perfiles";
     });
   };
@@ -41,7 +41,7 @@ export default class CrearPerfilComponent extends Component {
   };
 
   changeEmpleadoIdHandler = (event) => {
-    this.setState({  empleadoId: event.target.value });
+    this.setState({  idEmpleado: event.target.value });
   };
 
   changeHabilidadesHandler = (event) => {
@@ -49,7 +49,7 @@ export default class CrearPerfilComponent extends Component {
   };
 
   changeAños_de_ExperienciaHandler = (event) => {
-    this.setState({ años_de_experiencia: event.target.value });
+    this.setState({ anosExperiencia: event.target.value });
   };
 
   render() {
@@ -78,7 +78,7 @@ export default class CrearPerfilComponent extends Component {
                       placeholder="Empleado ID"
                       name="empleadoId"
                       className="form-control"
-                      value={this.state.empleadoId}
+                      value={this.state.idEmpleado}
                       onChange={this.changeEmpleadoIdHandler}
                     />
                   </div>
@@ -98,14 +98,14 @@ export default class CrearPerfilComponent extends Component {
                       placeholder="Años de Experiencia"
                       name="años_de_experiencia"
                       className="form-control"
-                      value={this.state.años_de_experiencia}
-                      onChange={this.changeAños_de_experienciaHandler}
+                      value={this.state.anosExperiencia}
+                      onChange={this.changeAños_de_ExperienciaHandler}
                     />
                   </div>
                   <button
                     className="btn btn-success"
                     style={{ marginTop: "10px" }}
-                    onClick={this.crearEmpleado}
+                    onClick={this.crearPerfil}
                   >
                     Guardar perfil
                   </button>
