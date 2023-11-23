@@ -9,11 +9,11 @@ export default class CrearCertificadoComponent extends Component {
 
     this.state = {
       id: "",
-      empleadoId: "",
+      idEmpleado: "",
       tipo: "",
       descripcion: "",
-      fecha_de_expedicion: "",
-      entidad_expedidora: "",
+      fechaExpedicion: "",
+      entidadExpedidora: "",
     };
     this.changeIdHandler = this.changeIdHandler.bind(this);
     this.changeEmpleadoIdHandler = this.changeEmpleadoIdHandler.bind(this);
@@ -30,16 +30,16 @@ export default class CrearCertificadoComponent extends Component {
     e.preventDefault();
     let certificado = {
       id: this.state.id,
-      empleadoId: this.state.empleadoId,
+      idEmpleado: this.state.idEmpleado,
       tipo: this.state.tipo,
       descripcion: this.state.descripcion,
-      fecha_de_expedicion: this.state.fecha_de_expedicion,
-      entidad_expedidora: this.state.entidad_expedidora,
+      fechaExpedicion: this.state.fechaExpedicion,
+      entidadExpedidora: this.state.entidadExpedidora,
     };
     console.log("certificado => " + JSON.stringify(certificado));
 
     servicioCertificado.crearCertificado(certificado).then((res) => {
-      window.location.href = "/certificados";
+      //window.location.href = "/certificados";
     });
   };
 
@@ -48,7 +48,7 @@ export default class CrearCertificadoComponent extends Component {
   };
 
   changeEmpleadoIdHandler = (event) => {
-    this.setState({ empleadoId: event.target.value });
+    this.setState({ idEmpleado: event.target.value });
   };
 
   changeTipoHandler = (event) => {
@@ -60,11 +60,11 @@ export default class CrearCertificadoComponent extends Component {
   };
 
   changeFecha_de_expedicionHandler = (event) => {
-    this.setState({ fecha_de_expedicion: event.target.value });
+    this.setState({ fechaExpedicion: event.target.value });
   };
 
   changeEntidad_expedidoraHandler = (event) => {
-    this.setState({ entidad_expedidora: event.target.value });
+    this.setState({ entidadExpedidora: event.target.value });
   };
 
   render() {
