@@ -1,5 +1,4 @@
 import axios from "axios";
-import ServicioAuth from "../servicios/ServicioAuth";
 
 const BASE_URL_ROL_BUSCAR_TODOS = "http://localhost:8080/rol/buscar/todos";
 const BASE_URL_ROL_BUSCAR_ID = "http://localhost:8080/rol/buscar/id?id=";
@@ -7,6 +6,8 @@ const BASE_URL_ROL_CREAR = "http://localhost:8080/rol/crear";
 const BASE_URL_ROL_ACTUALIZAR = "http://localhost:8080/rol/actualizar";
 const BASE_URL_ROL_ELIMINAR = "http://localhost:8080/rol/eliminar/id?id=";
 
+const USER = "Recursos_humanos"
+const PASS = "12345"
 
 class ServicioRoles {
   getRolTodos() {
@@ -15,8 +16,8 @@ class ServicioRoles {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       }
     });
   }
@@ -27,8 +28,8 @@ class ServicioRoles {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       }
     });
   }
@@ -39,8 +40,8 @@ class ServicioRoles {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       }
     });
   }
@@ -54,8 +55,8 @@ class ServicioRoles {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       }
     });
   }
@@ -66,8 +67,8 @@ class ServicioRoles {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       }
     });
   }

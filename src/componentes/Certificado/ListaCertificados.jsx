@@ -28,8 +28,8 @@ class ListaCertificados extends Component {
                 <th>Certificado ID</th>
                 <th>Empleado ID</th>
                 <th>Tipo</th>
-                <th>Descripción</th>
-                <th>Fecha de Expedición</th>
+                <th>Descripcion</th>
+                <th>Fecha de Expedicion</th>
                 <th>Entidad Expedidora</th>
               </tr>
             </tbody>

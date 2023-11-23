@@ -1,5 +1,4 @@
 import axios from "axios";
-import ServicioAuth from "../servicios/ServicioAuth";
 
 const BASE_URL_CERTIFICADO_BUSCAR_TODOS =
   "http://localhost:8080/certificado/buscar/todos";
@@ -9,6 +8,9 @@ const BASE_URL_CERTIFICADO_CREAR = "http://localhost:8080/certificado/subir";
 const BASE_URL_CERTIFICADO_ELIMINAR =
   "http://localhost:8080/certificado/eliminar/id?id=";
 
+const USER = "Recursos_humanos";
+const PASS = "12345";
+
 class ServicioCertificado {
   getCertificadoTodos() {
     return axios.get(BASE_URL_CERTIFICADO_BUSCAR_TODOS, {
@@ -16,8 +18,8 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       },
     });
   }
@@ -28,8 +30,8 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       },
     });
   }
@@ -42,26 +44,21 @@ class ServicioCertificado {
     fechaExpedicion,
     entidadExpedidora
   ) {
-    return axios.post(
-      BASE_URL_CERTIFICADO_CREAR,
-      {
-        id: id,
-        tipo: tipo,
-        descripcion: descripcion,
-        idEmpleado: idEmpleado,
-        fechaExpedicion: fechaExpedicion,
-        entidadExpedidora: entidadExpedidora,
+    return axios.post(BASE_URL_CERTIFICADO_CREAR, {
+      id: id,
+      tipo: tipo,
+      descripcion: descripcion,
+      idEmpleado: idEmpleado,
+      fechaExpedicion: fechaExpedicion,
+      entidadExpedidora: entidadExpedidora,
+      headers: {
+        "Content-Type": "application/json",
       },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        auth: {
-          username: ServicioAuth.getUser(),
-          password: ServicioAuth.getPass(),
-        },
-      }
-    );
+      auth: {
+        username: USER,
+        password: PASS,
+      },
+    });
   }
 
   eliminarCertificado(id) {
@@ -70,8 +67,8 @@ class ServicioCertificado {
         "Content-Type": "application/json",
       },
       auth: {
-        username: ServicioAuth.getUser(),
-        password: ServicioAuth.getPass(),
+        username: USER,
+        password: PASS,
       },
     });
   }

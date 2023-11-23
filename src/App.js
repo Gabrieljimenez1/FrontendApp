@@ -14,8 +14,9 @@ import ActualizarEmpleadoComponent from "./componentes/Empleado/ActualizarEmplea
 import EliminarEmpleadoComponent from "./componentes/Empleado/EliminarEmpleadoComponent";
 import ActualizarRolEmpleadoComponent from "./componentes/Empleado/ActualizarRolEmpleadoComponent";
 import PaginaInicial from "./componentes/PaginaInicial";
-import InformaciónEmpleadoComponent from "./componentes/Empleado/InformaciónEmpleadoComponent";
+import InformaciónEmpleadoComponent from "./componentes/Empleado/InformacionEmpleadoComponent";
 import CrearRolComponent from "./componentes/Rol/CrearRolComponent";
+import Login from "./componentes/Login";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <HeaderComponent />
         <div className="container">
           <Routes>
-            <Route path="/" exact element={<PaginaInicial />}></Route>
+            <Route path="/" exact element={<Login />}></Route>
             <Route path="/pagina-inicial" element={<PaginaInicial />}></Route>
             <Route path="/empleados" element={<ListaEmpleados />}></Route>
             <Route
