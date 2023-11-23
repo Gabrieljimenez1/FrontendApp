@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import ServicioPerfil from "../servicios/ServicioPerfil";
+import ServicioPerfil from "../../servicios/ServicioPerfil";
+import HeaderComponent from "../HeaderComponent";
+// eslint-disable-next-line
+import {BrowserRouter as Router, Link } from "react-router-dom";
 
 class ListaPerfiles extends Component {
   constructor(props) {
@@ -18,6 +21,7 @@ class ListaPerfiles extends Component {
   render() {
     return (
       <div>
+        <HeaderComponent />
         <h2 className="text-center">Lista Perfiles</h2>
         <div className="row">
           <table className="table table-striped table-bordered">
@@ -41,6 +45,30 @@ class ListaPerfiles extends Component {
               ))}
             </tbody>
           </table>
+        </div>
+        <div>
+          <ul>
+            <Link to="/ver-perfiles">
+              <button className="btn btn-primary"> Buscar por ID</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/crear-perfiles">
+              <button className="btn btn-primary"> Agregar Perfil</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/actualizar-perfiles">
+              <button className="btn btn-primary">
+                Actualizar Perfil
+              </button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/eliminar-perfiles">
+              <button className="btn btn-primary"> Eliminar Perfiles</button>
+            </Link>
+          </ul>
         </div>
       </div>
     );

@@ -1,24 +1,40 @@
 import React, { Component } from "react";
-import ServicioEmpleado from "../servicios/ServicioEmpleado";
+import ServicioEmpleado from "../../servicios/ServicioEmpleado";
+import HeaderComponent from "../HeaderComponent";
+// eslint-disable-next-line
+import {BrowserRouter as Router, Link } from "react-router-dom";
 
 class ListaEmpleados extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       empleados: [],
     };
+    this.crearEmpleado = this.crearEmpleado.bind(this);
   }
-
   componentDidMount() {
     ServicioEmpleado.getEmpleadoTodos().then((res) => {
       this.setState({ empleados: res.data });
     });
   }
 
+  crearEmpleado(empleadoId) {
+    window.location.href = `/crear-empleado/${empleadoId}`;
+  }
+
+  
+
   render() {
     return (
       <div>
+        <HeaderComponent />
         <h2 className="text-center">Lista Empleados</h2>
+        <div className="row">
+          <button className="btn btn-primary" onClick={() => this.crearEmpleado("1367")}>
+            Agregar Empleado
+          </button>
+        </div>
         <div className="row">
           <table className="table table-striped table-bordered">
             <tbody>
@@ -31,6 +47,7 @@ class ListaEmpleados extends Component {
                 <th>Direccion Empleado</th>
                 <th>Cedula Empleado</th>
                 <th>ID_Rol Empleado</th>
+                <th>Acciones</th>
               </tr>
             </tbody>
 
@@ -49,6 +66,35 @@ class ListaEmpleados extends Component {
               ))}
             </tbody>
           </table>
+        </div>
+        <div>
+          <ul>
+            <Link to="/ver-empleado">
+              <button className="btn btn-primary"> Buscar por ID</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/crear-empleado">
+              <button className="btn btn-primary"> Agregar Empleado</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/actualizar-empleado">
+              <button className="btn btn-primary">
+                Actualizar Informacion Personal
+              </button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/actualizar-rol-empleado">
+              <button className="btn btn-primary"> Actualizar Rol</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/eliminar-empleado">
+              <button className="btn btn-primary"> Eliminar Empleado</button>
+            </Link>
+          </ul>
         </div>
       </div>
     );

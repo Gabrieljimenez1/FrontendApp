@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import ServicioCertificado from "../servicios/ServicioCertificado";
+import ServicioCertificado from "../../servicios/ServicioCertificado";
+import HeaderComponent from "../HeaderComponent";
+// eslint-disable-next-line
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class ListaCertificados extends Component {
   constructor(props) {
@@ -18,6 +21,7 @@ class ListaCertificados extends Component {
   render() {
     return (
       <div>
+        <HeaderComponent />
         <h2 className="text-center">Lista Certificados</h2>
         <div className="row">
           <table className="table table-striped table-bordered">
@@ -26,8 +30,8 @@ class ListaCertificados extends Component {
                 <th>Certificado ID</th>
                 <th>Empleado ID</th>
                 <th>Tipo</th>
-                <th>Descripción</th>
-                <th>Fecha de Expedición</th>
+                <th>Descripcion</th>
+                <th>Fecha de Expedicion</th>
                 <th>Entidad Expedidora</th>
               </tr>
             </tbody>
@@ -45,6 +49,23 @@ class ListaCertificados extends Component {
               ))}
             </tbody>
           </table>
+        </div>
+        <div>
+          <ul>
+            <Link to="/ver-certificados">
+              <button className="btn btn-primary"> Buscar por ID</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/crear-certificados">
+              <button className="btn btn-primary"> Agregar Certificado</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/eliminar-certificados">
+              <button className="btn btn-primary"> Eliminar Certificado</button>
+            </Link>
+          </ul>
         </div>
       </div>
     );
