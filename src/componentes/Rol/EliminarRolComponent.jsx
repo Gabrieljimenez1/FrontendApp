@@ -1,35 +1,34 @@
-import React, { Component } from "react";
-import HeaderComponent from "../HeaderComponent";
+import React, { Component } from 'react'
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import servicioRol from "../../servicios/ServicioRol";
+import servicioRol from '../../servicios/ServicioRol';
 
 export default class EliminarRolComponent extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+        id: "",
+        };
+        this.changeIdHandler = this.changeIdHandler.bind(this);
+        
+    }
 
-    this.state = {
-      id: "",
-    };
-    this.changeIdHandler = this.changeIdHandler.bind(this);
-  }
+    changeIdHandler = (event) => {
+        this.setState({ id: event.target.value });
+    }
 
-  changeIdHandler = (event) => {
-    this.setState({ id: event.target.value });
-  };
-
-  eliminarRol = (e) => {
-    e.preventDefault();
-    console.log("rol => " + this.state.id);
-    servicioRol.eliminarRol(this.state.id).then((res) => {
-      window.location.href = "/roles";
-    });
-  };
+    eliminarRol = (e) => {
+        e.preventDefault();
+        console.log("rol => " + this.state.id);
+        servicioRol.eliminarRol(this.state.id).then((res) => {
+        window.location.href = "/roles";
+        });
+    }
 
   render() {
     return (
-      <div>
-        <HeaderComponent />
+        <div>
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">
@@ -49,7 +48,6 @@ export default class EliminarRolComponent extends Component {
 
                   <button
                     className="btn btn-success"
-                    style={{ marginTop: "10px" }}
                     onClick={this.eliminarRol}
                   >
                     Eliminar Rol
@@ -58,7 +56,7 @@ export default class EliminarRolComponent extends Component {
                   <Link to="/roles">
                     <button
                       className="btn btn-danger"
-                      style={{ marginLeft: "10px", marginTop: "10px" }}
+                      style={{ marginLeft: "10px" }}
                     >
                       Regresar
                     </button>
@@ -69,6 +67,6 @@ export default class EliminarRolComponent extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }

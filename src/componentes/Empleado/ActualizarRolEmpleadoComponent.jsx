@@ -24,10 +24,8 @@ class ActualizarRolEmpleadoComponent extends Component {
       idRol: this.state.idRol,
     };
     console.log("empleado => " + JSON.stringify(empleado));
-    servicioEmpleado
-      .actualizarEmpleadoRol(this.state.id, this.state.idRol)
-      .then((res) => {
-        window.location.href = "/empleados";
+    servicioEmpleado.actualizarEmpleadoRol(this.state.id, this.state.idRol).then((res) => {
+      window.location.href = "/empleados";
       });
   };
 
