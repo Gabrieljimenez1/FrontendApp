@@ -42,7 +42,7 @@ export default class CrearEmpleadoComponent extends Component {
     console.log("empleado => " + JSON.stringify(empleado));
 
     servicioEmpleado.crearEmpleado(empleado).then((res) => {
-      this.props.history && this.props.history.push("/empleados");
+      window.location.href = "/empleados";
     });
   };
 
