@@ -25,7 +25,7 @@ export default class ActualizarRolComponent extends Component {
             responsabilidades: this.state.responsabilidades
         };
         console.log("rol => " + JSON.stringify(rol));
-        servicioRol.actualizarRolInfo(
+        servicioRol.actualizarRol(
             this.state.id,
             this.state.responsabilidades
         ).then((res) => {

@@ -48,7 +48,7 @@ class ServicioRoles {
 
   actualizarRol(id, responsabilidades) {
     return axios.put(BASE_URL_ROL_ACTUALIZAR, {
-      "ID": id,
+      "id": id,
       "responsabilidades": responsabilidades
     }, {
       headers: {
