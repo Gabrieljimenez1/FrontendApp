@@ -14,6 +14,9 @@ import ActualizarRolEmpleadoComponent from "./componentes/Empleado/ActualizarRol
 import PaginaInicial from "./componentes/PaginaInicial";
 import InformacionEmpleadoComponent from "./componentes/Empleado/InformacionEmpleadoComponent";
 import CrearRolComponent from "./componentes/Rol/CrearRolComponent";
+import ActualizarRolComponent from "./componentes/Rol/ActualizarRolComponent";
+import EliminarRolComponent from "./componentes/Rol/EliminarRolComponent";
+import InformacionRolComponent from "./componentes/Rol/InformacionRolComponent";
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
             <Route path="/ver-empleado/" element={<InformacionEmpleadoComponent />}></Route>
             <Route path="/roles" element={<ListaRoles />}></Route>
             <Route path="/agregar-rol" element={<CrearRolComponent />}></Route>
+            <Route path="/actualizar-rol" element={<ActualizarRolComponent />}></Route>
+            <Route path="/eliminar-rol" element={<EliminarRolComponent />}></Route>
+            <Route path="/ver-rol" element={<InformacionRolComponent />}></Route>
             <Route path="/certificados" element={<ListaCertificados />}></Route>
             <Route path="/perfiles" element={<ListaPerfiles />}></Route>
           </Routes>
