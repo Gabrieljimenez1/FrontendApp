@@ -1,45 +1,45 @@
 import React, { Component } from "react";
-import servicioCertificado from "../../servicios/ServicioCertificado";
+import ServicioPerfil from "../../servicios/ServicioPerfil";
 import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
-export default class InformacionCertificadoComponent extends Component {
+export default class InformacionPerfilComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       id: "0",
-      certificado: [],
+      perfil: [],
     };
 
     this.changeIdHandler = this.changeIdHandler.bind(this);
-    this.mostrarCertificado = this.mostrarCertificado.bind(this);
-    this.cargarCertificado = this.cargarCertificado.bind(this);
+    this.mostrarPerfil = this.mostrarPerfil.bind(this);
+    this.cargarPerfil = this.cargarPerfil.bind(this);
     this.test = this.test.bind(this);
   }
 
   test = (e) => {
     e.preventDefault();
-    console.log(this.state.certificado);
-    console.log(this.state.certificado[0].id);
+    console.log(this.state.perfil);
+    console.log(this.state.perfil[0].id);
   };
 
   changeIdHandler = (event) => {
     this.setState({ id: event.target.value });
   };
 
-  cargarCertificado = () => {
+  cargarPerfil = () => {
     if (this.state.id !== "") {
-      servicioCertificado.getCertificadoFromId(this.state.id).then((res) => {
-        this.setState({ certificado: res.data });
+      ServicioPerfil.getPerfilFromId(this.state.id).then((res) => {
+        this.setState({ perfil: res.data });
       });
     }
   };
 
-  mostrarCertificado = (e) => {
+  mostrarPerfil = (e) => {
     e.preventDefault();
-    this.cargarCertificado();
+    this.cargarPerfil();
   };
 
   render() {
@@ -50,7 +50,7 @@ export default class InformacionCertificadoComponent extends Component {
           <div className="container">
             <div className="row">
               <div className="card col-md-6 offset-md-3 offset-md-3">
-                <h3 className="text-center">Mostrar detalles Certificado</h3>
+                <h3 className="text-center">Mostrar detalles Perfiles</h3>
                 <div className="card-body">
                   <form>
                     <div className="form-group">
@@ -66,57 +66,49 @@ export default class InformacionCertificadoComponent extends Component {
                       <button
                         className="btn btn-success"
                         style={{ marginTop: "10px" }}
-                        onClick={this.mostrarCertificado}
+                        onClick={this.mostrarPerfil}
                       >
-                        Mostrar Certificados
+                        Mostrar perfil
                       </button>
                     </div>
                   </form>
                 </div>
                 <div className="card-body">
                   <div className="row">
-                    <label>ID certificado:</label>
+                    <label>Perfil ID:</label>
                     <div>
-                      {this.state.certificado.length !== 0
-                        ? this.state.certificado[0].id
+                      {this.state.perfil.length !== 0
+                        ? this.state.perfil[0].id
                         : "ID inexistente"}
                     </div>
                   </div>
                   <div className="row">
                     <label>Empleado ID:</label>
                     <div>
-                      {this.state.certificado.length !== 0
-                        ? this.state.certificado[0].idEmpleado
+                      {this.state.perfil.length !== 0
+                        ? this.state.perfil[0].idEmpleado
                         : "ID inexistente"}
                     </div>
                   </div>
                   <div className="row">
-                    <label>Descripcion</label>
+                    <label>Habilidades:</label>
                     <div>
-                      {this.state.certificado.length !== 0
-                        ? this.state.certificado[0].descripcion
+                      {this.state.perfil.length !== 0
+                        ? this.state.perfil[0].habilidades
                         : "ID inexistente"}
                     </div>
                   </div>
                   <div className="row">
-                    <label>Fecha de expedicion:</label>
+                    <label>Años de Experiencia:</label>
                     <div>
-                      {this.state.certificado.length !== 0
-                        ? this.state.certificado[0].fechaExpedicion
-                        : "ID inexistente"}
-                    </div>
-                  </div>
-                  <div className="row">
-                    <label>Entidad expedidora:</label>
-                    <div>
-                      {this.state.certificado.length !== 0
-                        ? this.state.certificado[0].entidadExpedidora
+                      {this.state.perfil.length !== 0
+                        ? this.state.perfil[0].tiempoExperiencia
                         : "ID inexistente"}
                     </div>
                   </div>
                   <br />
 
-                  <Link to="/certificados">
+                  <Link to="/perfiles">
                     <button
                       className="btn btn-danger"
                       style={{ marginLeft: "10px" }}

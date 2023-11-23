@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import servicioEmpleado from "../../servicios/ServicioEmpleado";
@@ -81,6 +82,7 @@ export default class CrearEmpleadoComponent extends Component {
   render() {
     return (
       <div>
+        <HeaderComponent />
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">

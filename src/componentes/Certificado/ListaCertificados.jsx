@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ServicioCertificado from "../../servicios/ServicioCertificado";
+import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -20,6 +21,7 @@ class ListaCertificados extends Component {
   render() {
     return (
       <div>
+        <HeaderComponent />
         <h2 className="text-center">Lista Certificados</h2>
         <div className="row">
           <table className="table table-striped table-bordered">

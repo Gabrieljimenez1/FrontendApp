@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Login from "./componentes/Login";
 import PaginaInicial from "./componentes/PaginaInicial";
 
@@ -22,15 +22,18 @@ import EliminarRolComponent from "./componentes/Rol/EliminarRolComponent";
 import InformacionRolComponent from "./componentes/Rol/InformacionRolComponent";
 
 import ListaPerfiles from "./componentes/Perfil/ListaPerfiles";
+import CrearPerfiles from "./componentes/Perfil/CrearPerfilComponent";
+import ActualizarPerfiles from "./componentes/Perfil/ActualizarPerfilComponent";
+import EliminarPerfiles from "./componentes/Perfil/EliminarPerfilComponent";
+import InformacionPerfiles from "./componentes/Perfil/InformacionPerfilComponent";
 
 import FooterComponent from "./componentes/FooterComponent";
-import HeaderComponent from "./componentes/HeaderComponent";
+
 
 function App() {
   return (
     <div>
       <Router>
-        <HeaderComponent />
         <div className="container">
           <Routes>
             <Route path="/" exact element={<Login />}></Route>
@@ -84,6 +87,10 @@ function App() {
               element={<InformacionCertificadoComponent />}
             ></Route>
             <Route path="/perfiles" element={<ListaPerfiles />}></Route>
+            <Route path="/crear-perfiles" element={<CrearPerfiles />}></Route>
+            <Route path="/actualizar-perfiles" element={<ActualizarPerfiles />}></Route>
+            <Route path="/ver-perfiles" element={<InformacionPerfiles />}></Route>
+            <Route path="/eliminar-perfiles" element={<EliminarPerfiles />}></Route>
           </Routes>
         </div>
         <FooterComponent />

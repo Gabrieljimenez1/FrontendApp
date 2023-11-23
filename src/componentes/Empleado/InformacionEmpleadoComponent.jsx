@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import servicioEmpleado from "../../servicios/ServicioEmpleado";
+import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -44,6 +45,7 @@ export default class InformacionEmpleadoComponent extends Component {
   render() {
     return (
       <div>
+        <HeaderComponent />
         <div>
           <div className="container">
             <div className="row">

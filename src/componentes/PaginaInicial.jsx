@@ -1,8 +1,10 @@
 import React from "react";
+import HeaderComponent from "./HeaderComponent";
 
 const PaginaInicial = () => {
   return (
     <div>
+      <HeaderComponent />
       <h1>Bienvenido a RH Manager</h1>
       <p>
         Maneje los empleados, sus roles y sus certificados o perfiles asociados

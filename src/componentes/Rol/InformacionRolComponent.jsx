@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import servicioRol from "../../servicios/ServicioRol";
@@ -37,6 +38,7 @@ export default class InformacionRolComponent extends Component {
   render() {
     return (
       <div>
+        <HeaderComponent />
         <div>
           <div className="container">
             <div className="row">
