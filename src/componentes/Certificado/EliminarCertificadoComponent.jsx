@@ -51,7 +51,7 @@ export default class EliminarCertificadoComponent extends Component {
                   <button
                     className="btn btn-success"
                     style={{ marginTop: "10px" }}
-                    onClick={this.eliminarCertificado}
+                    onClick={this.EliminarCertificado}
                   >
                     Eliminar certificado
                   </button>
