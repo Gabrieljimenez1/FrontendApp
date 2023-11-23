@@ -36,9 +36,7 @@ class ServicioCertificado {
     });
   }
 
-  crearCertificado(
-    certificado
-  ) {
+  crearCertificado(certificado) {
     return axios.post(BASE_URL_CERTIFICADO_CREAR, certificado, {
       headers: {
         "Content-Type": "application/json",
