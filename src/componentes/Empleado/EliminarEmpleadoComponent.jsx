@@ -22,7 +22,7 @@ export default class EliminarEmpleadoComponent extends Component {
     e.preventDefault();
     console.log("empleado => " + this.state.id);
     servicioEmpleado.eliminarEmpleado(this.state.id).then((res) => {
-      this.props.history.push("/empleados");
+      window.location.href = "/empleados";
     });
   };
 
@@ -32,7 +32,7 @@ export default class EliminarEmpleadoComponent extends Component {
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">
-              <h3 className="text-center">Agregar Empleado</h3>
+              <h3 className="text-center">Eliminar Empleado</h3>
               <div className="card-body">
                 <form>
                   <div className="form-group">
@@ -48,6 +48,7 @@ export default class EliminarEmpleadoComponent extends Component {
 
                   <button
                     className="btn btn-success"
+                    style={{ marginTop: "10px" }}
                     onClick={this.eliminarEmpleado}
                   >
                     Eliminar empleado
@@ -56,7 +57,7 @@ export default class EliminarEmpleadoComponent extends Component {
                   <Link to="/empleados">
                     <button
                       className="btn btn-danger"
-                      style={{ marginLeft: "10px" }}
+                      style={{ marginLeft: "10px", marginTop: "10px" }}
                     >
                       Regresar
                     </button>

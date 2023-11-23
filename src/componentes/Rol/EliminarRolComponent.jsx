@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import servicioCertificado from "../../servicios/ServicioCertificado";
+import servicioRol from "../../servicios/ServicioRol";
 
-export default class EliminarCertificadoComponent extends Component {
+export default class EliminarRolComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -11,18 +11,17 @@ export default class EliminarCertificadoComponent extends Component {
       id: "",
     };
     this.changeIdHandler = this.changeIdHandler.bind(this);
-    this.EliminarCertificado = this.EliminarCertificado.bind(this);
   }
 
   changeIdHandler = (event) => {
     this.setState({ id: event.target.value });
   };
 
-  EliminarCertificado = (e) => {
+  eliminarRol = (e) => {
     e.preventDefault();
-    console.log("certificado => " + this.state.id);
-    servicioCertificado.eliminarCertificado(this.state.id).then((res) => {
-      window.location.href = "/certificados";
+    console.log("rol => " + this.state.id);
+    servicioRol.eliminarRol(this.state.id).then((res) => {
+      window.location.href = "/roles";
     });
   };
 
@@ -32,7 +31,7 @@ export default class EliminarCertificadoComponent extends Component {
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">
-              <h3 className="text-center">Eliminar Certificado</h3>
+              <h3 className="text-center">Eliminar Rol </h3>
               <div className="card-body">
                 <form>
                   <div className="form-group">
@@ -49,12 +48,12 @@ export default class EliminarCertificadoComponent extends Component {
                   <button
                     className="btn btn-success"
                     style={{ marginTop: "10px" }}
-                    onClick={this.eliminarCertificado}
+                    onClick={this.eliminarRol}
                   >
-                    Eliminar certificado
+                    Eliminar Rol
                   </button>
 
-                  <Link to="/certificados">
+                  <Link to="/roles">
                     <button
                       className="btn btn-danger"
                       style={{ marginLeft: "10px", marginTop: "10px" }}

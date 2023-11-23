@@ -52,7 +52,7 @@ class ActualizarEmpleadoComponent extends Component {
         this.state.cedula
       )
       .then((res) => {
-        this.props.history.push("/empleados");
+        window.location.href = "/empleados";
       });
   };
 
@@ -179,15 +179,16 @@ class ActualizarEmpleadoComponent extends Component {
                   </div>
                   <button
                     className="btn btn-success"
+                    style={{ marginTop: "10px" }}
                     onClick={this.actualizarEmpleado}
                   >
-                    Guardar empleado
+                    Guardar cambios del empleado
                   </button>
 
                   <Link to="/empleados">
                     <button
                       className="btn btn-danger"
-                      style={{ marginLeft: "10px" }}
+                      style={{ marginLeft: "10px", marginTop: "10px" }}
                     >
                       Regresar
                     </button>

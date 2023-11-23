@@ -26,7 +26,7 @@ class ActualizarRolEmpleadoComponent extends Component {
     servicioEmpleado
       .actualizarEmpleadoRol(this.state.id, this.state.idRol)
       .then((res) => {
-        Link("/empleados");
+        window.location.href = "/empleados";
       });
   };
 
@@ -69,6 +69,7 @@ class ActualizarRolEmpleadoComponent extends Component {
                   </div>
                   <button
                     className="btn btn-success"
+                    style={{ marginTop: "10px" }}
                     onClick={this.actualizarRolEmpleado}
                   >
                     Guardar empleado
@@ -77,7 +78,7 @@ class ActualizarRolEmpleadoComponent extends Component {
                   <Link to="/empleados">
                     <button
                       className="btn btn-danger"
-                      style={{ marginLeft: "10px" }}
+                      style={{ marginLeft: "10px", marginTop: "10px" }}
                     >
                       Regresar
                     </button>

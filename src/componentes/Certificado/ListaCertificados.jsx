@@ -50,17 +50,17 @@ class ListaCertificados extends Component {
         </div>
         <div>
           <ul>
-            <Link to="/ver-empleado">
+            <Link to="/ver-certificados">
               <button className="btn btn-primary"> Buscar por ID</button>
             </Link>
           </ul>
           <ul>
-            <Link to="/crear-empleado">
+            <Link to="/crear-certificados">
               <button className="btn btn-primary"> Agregar Certificado</button>
             </Link>
           </ul>
           <ul>
-            <Link to="/eliminar-empleado">
+            <Link to="/eliminar-certificados">
               <button className="btn btn-primary"> Eliminar Certificado</button>
             </Link>
           </ul>

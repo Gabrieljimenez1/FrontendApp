@@ -42,7 +42,7 @@ class ListaRoles extends Component {
         </div>
         <div>
           <ul>
-            <Link to="/ver-empleado">
+            <Link to="/ver-rol">
               <button className="btn btn-primary"> Buscar por ID</button>
             </Link>
           </ul>
@@ -52,14 +52,14 @@ class ListaRoles extends Component {
             </Link>
           </ul>
           <ul>
-            <Link to="/actualizar-empleado">
+            <Link to="/actualizar-rol">
               <button className="btn btn-primary">
                 Actualizar Informacion del Rol
               </button>
             </Link>
           </ul>
           <ul>
-            <Link to="/eliminar-empleado">
+            <Link to="/eliminar-rol">
               <button className="btn btn-primary"> Eliminar Rol</button>
             </Link>
           </ul>

@@ -42,7 +42,7 @@ export default class CrearEmpleadoComponent extends Component {
     console.log("empleado => " + JSON.stringify(empleado));
 
     servicioEmpleado.crearEmpleado(empleado).then((res) => {
-      this.props.history && this.props.history.push("/empleados");
+      window.location.href = "/empleados";
     });
   };
 
@@ -169,6 +169,7 @@ export default class CrearEmpleadoComponent extends Component {
                   </div>
                   <button
                     className="btn btn-success"
+                    style={{ marginTop: "10px" }}
                     onClick={this.crearEmpleado}
                   >
                     Guardar empleado
@@ -177,7 +178,7 @@ export default class CrearEmpleadoComponent extends Component {
                   <Link to="/empleados">
                     <button
                       className="btn btn-danger"
-                      style={{ marginLeft: "10px" }}
+                      style={{ marginLeft: "10px", marginTop: "10px" }}
                     >
                       Regresar
                     </button>

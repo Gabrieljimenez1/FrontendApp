@@ -1,22 +1,30 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import FooterComponent from "./componentes/FooterComponent";
-import HeaderComponent from "./componentes/HeaderComponent";
+import Login from "./componentes/Login";
+import PaginaInicial from "./componentes/PaginaInicial";
+
 import ListaEmpleados from "./componentes/Empleado/ListaEmpleados";
-import ListaRoles from "./componentes/Rol/ListaRoles";
+import CrearEmpleadoComponent from "./componentes/Empleado/CrearEmpleadoComponent";
+import ActualizarEmpleadoComponent from "./componentes/Empleado/ActualizarEmpleadoComponent";
+import ActualizarRolEmpleadoComponent from "./componentes/Empleado/ActualizarRolEmpleadoComponent";
+import EliminarEmpleadoComponent from "./componentes/Empleado/EliminarEmpleadoComponent";
+import InformaciónEmpleadoComponent from "./componentes/Empleado/InformacionEmpleadoComponent";
+
 import ListaCertificados from "./componentes/Certificado/ListaCertificados";
 import CrearCertificadoComponent from "./componentes/Certificado/CrearCertificadoComponent";
 import EliminarCertificadoComponent from "./componentes/Certificado/EliminarCertificadoComponent";
 import InformacionCertificadoComponent from "./componentes/Certificado/InformacionCertificadoComponent";
-import ListaPerfiles from "./componentes/Perfil/ListaPerfiles";
-import CrearEmpleadoComponent from "./componentes/Empleado/CrearEmpleadoComponent";
-import ActualizarEmpleadoComponent from "./componentes/Empleado/ActualizarEmpleadoComponent";
-import EliminarEmpleadoComponent from "./componentes/Empleado/EliminarEmpleadoComponent";
-import ActualizarRolEmpleadoComponent from "./componentes/Empleado/ActualizarRolEmpleadoComponent";
-import PaginaInicial from "./componentes/PaginaInicial";
-import InformaciónEmpleadoComponent from "./componentes/Empleado/InformacionEmpleadoComponent";
+
+import ListaRoles from "./componentes/Rol/ListaRoles";
 import CrearRolComponent from "./componentes/Rol/CrearRolComponent";
-import Login from "./componentes/Login";
+import ActualizarRolComponent from "./componentes/Rol/ActualizarRolComponent";
+import EliminarRolComponent from "./componentes/Rol/EliminarRolComponent";
+import InformacionRolComponent from "./componentes/Rol/InformacionRolComponent";
+
+import ListaPerfiles from "./componentes/Perfil/ListaPerfiles";
+
+import FooterComponent from "./componentes/FooterComponent";
+import HeaderComponent from "./componentes/HeaderComponent";
 
 function App() {
   return (
@@ -50,6 +58,18 @@ function App() {
             ></Route>
             <Route path="/roles" element={<ListaRoles />}></Route>
             <Route path="/agregar-rol" element={<CrearRolComponent />}></Route>
+            <Route
+              path="/actualizar-rol"
+              element={<ActualizarRolComponent />}
+            ></Route>
+            <Route
+              path="/eliminar-rol"
+              element={<EliminarRolComponent />}
+            ></Route>
+            <Route
+              path="/ver-rol"
+              element={<InformacionRolComponent />}
+            ></Route>
             <Route path="/certificados" element={<ListaCertificados />}></Route>
             <Route
               path="/crear-certificados"
