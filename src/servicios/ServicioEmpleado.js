@@ -72,7 +72,7 @@ class ServicioEmpleado {
   }
 
   actualizarEmpleadoRol(id, idRol) {
-    return axios.put(`${BASE_URL_EMPLEADO_ACTUALIZAR_ROL_FIRST}${id}${BASE_URL_EMPLEADO_ACTUALIZAR_ROL_SECOND}${idRol}`, {
+    return axios.put(`${BASE_URL_EMPLEADO_ACTUALIZAR_ROL_FIRST}${id}${BASE_URL_EMPLEADO_ACTUALIZAR_ROL_SECOND}${idRol}`, {}, {
       headers: {
         "Content-Type": "application/json",
       },

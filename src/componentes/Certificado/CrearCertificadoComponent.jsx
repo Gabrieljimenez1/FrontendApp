@@ -39,7 +39,7 @@ export default class CrearCertificadoComponent extends Component {
     console.log("certificado => " + JSON.stringify(certificado));
 
     servicioCertificado.crearCertificado(certificado).then((res) => {
-      //window.location.href = "/certificados";
+      window.location.href = "/certificados";
     });
   };
 
