@@ -4,7 +4,7 @@ const BASE_URL_PERFIL_BUSCAR_TODOS = "http://localhost:8080/perfil/buscar/todos"
 const BASE_URL_PERFIL_BUSCAR_ID = "http://localhost:8080/perfil/buscar/id?id=";
 const BASE_URL_PERFIL_CREAR = "http://localhost:8080/perfil/subir";
 const BASE_URL_PERFIL_ACTUALIZAR = "http://localhost:8080/perfil/actualizar";
-const BASE_URL_PERFIL_ELIMINAR = "http://localhost:8080/perfil/eliminar/id?id=";
+const BASE_URL_PERFIL_ELIMINAR = "http://localhost:8080/perfil/eliminar?id=";
 
 const USER = "Recursos_humanos"
 const PASS = "12345"
@@ -34,13 +34,9 @@ class ServicioPerfil {
     });
   }
 
-  crearPerfil(id, idEmpleado, habilidades, anosExperiencia) {
-    return axios.post(BASE_URL_PERFIL_CREAR, {
-      "id": id,
-      "idEmpleado": idEmpleado,
-      "habilidades": habilidades,
-      "anosExperiencia": anosExperiencia
-    }, {
+  crearPerfil(perfil) {
+    return axios.post(BASE_URL_PERFIL_CREAR, perfil, {
+      
       headers: {
         "Content-Type": "application/json",
       },

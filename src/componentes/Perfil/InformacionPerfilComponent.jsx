@@ -102,7 +102,7 @@ export default class InformacionPerfilComponent extends Component {
                     <label>Años de Experiencia:</label>
                     <div>
                       {this.state.perfil.length !== 0
-                        ? this.state.perfil[0].tiempoExperiencia
+                        ? this.state.perfil[0].anosExperiencia
                         : "ID inexistente"}
                     </div>
                   </div>

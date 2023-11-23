@@ -10,15 +10,14 @@ class ActualizarPerfilComponent extends Component {
 
     this.state = {
       id: "",
-      empleadoId: "",
+      idEmpleado: "",
       habilidades: "",
-      años_de_experiencia: ""
+      anosExperiencia: ""
     };
-     this.changeIdHandler = this.changeIdHandler.bind(this);
+    this.changeIdHandler = this.changeIdHandler.bind(this);
     this.changeEmpleadoIdHandler = this.changeEmpleadoIdHandler.bind(this);
     this.changeHabilidadesHandler = this.changeHabilidadesHandler.bind(this);
-    this.changeAños_de_experienciaHandler = this.changeAños_de_experienciaHandler.bind(this);
-    this.crearPerfil = this.crearPerfil.bind(this);
+    this.changeAños_de_ExperienciaHandler = this.changeAños_de_ExperienciaHandler.bind(this);
     this.actualizarPerfil = this.actualizarPerfil.bind(this);
   }
 
@@ -26,17 +25,17 @@ class ActualizarPerfilComponent extends Component {
     e.preventDefault();
     let perfil = {
       id: this.state.id,
-      empleadoId: this.state.empleadoId,
+      idEmpleado: this.state.idEmpleado,
       habilidades: this.state.habilidades,
-      años_de_experiencia: this.state.años_de_experiencia,
+      anosExperiencia: this.state.anosExperiencia
     };
     console.log("perfil => " + JSON.stringify(perfil));
     ServicioPerfil
       .actualizarPerfil(
        this.state.id,
-       this.state.empleadoId,
+       this.state.idEmpleado,
        this.state.habilidades,
-       this.state.años_de_experiencia,
+       this.state.anosExperiencia
       )
       .then((res) => {
         window.location.href = "/perfiles";
@@ -48,7 +47,7 @@ class ActualizarPerfilComponent extends Component {
   };
 
   changeEmpleadoIdHandler = (event) => {
-    this.setState({ empleadoId: event.target.value });
+    this.setState({ idEmpleado: event.target.value });
   };
 
   changeHabilidadesHandler = (event) => {
@@ -56,7 +55,7 @@ class ActualizarPerfilComponent extends Component {
   };
 
   changeAños_de_ExperienciaHandler = (event) => {
-    this.setState({ años_de_experiencia: event.target.value });
+    this.setState({ anosExperiencia: event.target.value });
   };
   render() {
     return (
@@ -65,7 +64,7 @@ class ActualizarPerfilComponent extends Component {
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">
-              <h3 className="text-center">Agregar Perfil</h3>
+              <h3 className="text-center">Actualizar Perfil</h3>
               <div className="card-body">
                 <form>
                   <div className="form-group">
@@ -84,7 +83,7 @@ class ActualizarPerfilComponent extends Component {
                       placeholder="Empleado ID"
                       name="empleadoId"
                       className="form-control"
-                      value={this.state.empleadoId}
+                      value={this.state.idEmpleado}
                       onChange={this.changeEmpleadoIdHandler}
                     />
                   </div>
@@ -104,14 +103,14 @@ class ActualizarPerfilComponent extends Component {
                       placeholder="Años de Experiencia"
                       name="años_de_experiencia"
                       className="form-control"
-                      value={this.state.años_de_experiencia}
-                      onChange={this.changeAños_de_experienciaHandler}
+                      value={this.state.anosExperiencia}
+                      onChange={this.changeAños_de_ExperienciaHandler}
                     />
                   </div>
                   <button
                     className="btn btn-success"
                     style={{ marginTop: "10px" }}
-                    onClick={this.crearEmpleado}
+                    onClick={this.actualizarPerfil}
                   >
                     Guardar perfil
                   </button>

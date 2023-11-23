@@ -23,6 +23,7 @@ class ServicioRoles {
   }
 
   getRolFromId(id) {
+    console.log(id)
     return axios.get(`${BASE_URL_ROL_BUSCAR_ID}${id}`, {
       headers: {
         "Content-Type": "application/json",
