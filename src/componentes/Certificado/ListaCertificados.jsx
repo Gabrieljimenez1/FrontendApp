@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ServicioCertificado from "../../servicios/ServicioCertificado";
+// eslint-disable-next-line
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class ListaCertificados extends Component {
   constructor(props) {
@@ -45,6 +47,23 @@ class ListaCertificados extends Component {
               ))}
             </tbody>
           </table>
+        </div>
+        <div>
+          <ul>
+            <Link to="/ver-empleado">
+              <button className="btn btn-primary"> Buscar por ID</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/crear-empleado">
+              <button className="btn btn-primary"> Agregar Certificado</button>
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/eliminar-empleado">
+              <button className="btn btn-primary"> Eliminar Certificado</button>
+            </Link>
+          </ul>
         </div>
       </div>
     );
