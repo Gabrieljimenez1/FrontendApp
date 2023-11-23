@@ -1,45 +1,45 @@
 import React, { Component } from "react";
-import servicioEmpleado from "../../servicios/ServicioEmpleado";
+import ServicioPerfil from "../../servicios/ServicioPerfil";
 import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
-export default class InformacionEmpleadoComponent extends Component {
+export default class InformacionPerfilComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       id: "0",
-      empleado: [],
+      perfil: [],
     };
 
     this.changeIdHandler = this.changeIdHandler.bind(this);
-    this.mostrarEmpleado = this.mostrarEmpleado.bind(this);
-    this.cargarEmpleado = this.cargarEmpleado.bind(this);
+    this.mostrarPerfil = this.mostrarPerfil.bind(this);
+    this.cargarPerfil = this.cargarPerfil.bind(this);
     this.test = this.test.bind(this);
   }
 
   test = (e) => {
     e.preventDefault();
-    console.log(this.state.empleado);
-    console.log(this.state.empleado[0].id);
+    console.log(this.state.perfil);
+    console.log(this.state.perfil[0].id);
   };
 
   changeIdHandler = (event) => {
     this.setState({ id: event.target.value });
   };
 
-  cargarEmpleado = () => {
+  cargarPerfil = () => {
     if (this.state.id !== "") {
-      servicioEmpleado.getEmpleadoFromId(this.state.id).then((res) => {
-        this.setState({ empleado: res.data });
+      ServicioPerfil.getPerfilFromId(this.state.id).then((res) => {
+        this.setState({ perfil: res.data });
       });
     }
   };
 
-  mostrarEmpleado = (e) => {
+  mostrarPerfil = (e) => {
     e.preventDefault();
-    this.cargarEmpleado();
+    this.cargarPerfil();
   };
 
   render() {
@@ -50,7 +50,7 @@ export default class InformacionEmpleadoComponent extends Component {
           <div className="container">
             <div className="row">
               <div className="card col-md-6 offset-md-3 offset-md-3">
-                <h3 className="text-center">Mostrar detalles Empleado</h3>
+                <h3 className="text-center">Mostrar detalles Perfiles</h3>
                 <div className="card-body">
                   <form>
                     <div className="form-group">
@@ -66,73 +66,49 @@ export default class InformacionEmpleadoComponent extends Component {
                       <button
                         className="btn btn-success"
                         style={{ marginTop: "10px" }}
-                        onClick={this.mostrarEmpleado}
+                        onClick={this.mostrarPerfil}
                       >
-                        Mostrar empleado
+                        Mostrar perfil
                       </button>
                     </div>
                   </form>
                 </div>
                 <div className="card-body">
                   <div className="row">
-                    <label>Nombre del empleado:</label>
+                    <label>Perfil ID:</label>
                     <div>
-                      {this.state.empleado.length !== 0
-                        ? this.state.empleado[0].nombre
+                      {this.state.perfil.length !== 0
+                        ? this.state.perfil[0].id
                         : "ID inexistente"}
                     </div>
                   </div>
                   <div className="row">
-                    <label>Edad del empleado:</label>
+                    <label>Empleado ID:</label>
                     <div>
-                      {this.state.empleado.length !== 0
-                        ? this.state.empleado[0].edad
+                      {this.state.perfil.length !== 0
+                        ? this.state.perfil[0].idEmpleado
                         : "ID inexistente"}
                     </div>
                   </div>
                   <div className="row">
-                    <label>Correo del empleado:</label>
+                    <label>Habilidades:</label>
                     <div>
-                      {this.state.empleado.length !== 0
-                        ? this.state.empleado[0].correo
+                      {this.state.perfil.length !== 0
+                        ? this.state.perfil[0].habilidades
                         : "ID inexistente"}
                     </div>
                   </div>
                   <div className="row">
-                    <label>Telefono del empleado:</label>
+                    <label>Años de Experiencia:</label>
                     <div>
-                      {this.state.empleado.length !== 0
-                        ? this.state.empleado[0].telefono
-                        : "ID inexistente"}
-                    </div>
-                  </div>
-                  <div className="row">
-                    <label>Direccion del empleado:</label>
-                    <div>
-                      {this.state.empleado.length !== 0
-                        ? this.state.empleado[0].direccion
-                        : "ID inexistente"}
-                    </div>
-                  </div>
-                  <div className="row">
-                    <label>Cedula del empleado:</label>
-                    <div>
-                      {this.state.empleado.length !== 0
-                        ? this.state.empleado[0].cedula
-                        : "ID inexistente"}
-                    </div>
-                  </div>
-                  <div className="row">
-                    <label>ID_Rol del empleado:</label>
-                    <div>
-                      {this.state.empleado.length !== 0
-                        ? this.state.empleado[0].idRol
+                      {this.state.perfil.length !== 0
+                        ? this.state.perfil[0].tiempoExperiencia
                         : "ID inexistente"}
                     </div>
                   </div>
                   <br />
 
-                  <Link to="/empleados">
+                  <Link to="/perfiles">
                     <button
                       className="btn btn-danger"
                       style={{ marginLeft: "10px" }}

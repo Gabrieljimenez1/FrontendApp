@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import servicioEmpleado from "../../servicios/ServicioEmpleado";
@@ -91,6 +92,7 @@ class ActualizarEmpleadoComponent extends Component {
   render() {
     return (
       <div>
+        <HeaderComponent />
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">
@@ -179,6 +181,7 @@ class ActualizarEmpleadoComponent extends Component {
                   </div>
                   <button
                     className="btn btn-success"
+                    style={{ marginTop: "10px" }}
                     onClick={this.actualizarEmpleado}
                   >
                     Guardar cambios del empleado
@@ -187,7 +190,7 @@ class ActualizarEmpleadoComponent extends Component {
                   <Link to="/empleados">
                     <button
                       className="btn btn-danger"
-                      style={{ marginLeft: "10px" }}
+                      style={{ marginLeft: "10px", marginTop: "10px" }}
                     >
                       Regresar
                     </button>

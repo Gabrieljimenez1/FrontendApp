@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import servicioRoles from '../../servicios/ServicioRol';
+import servicioRoles from "../../servicios/ServicioRol";
 
 export default class CrearRolComponent extends Component {
   constructor(props) {
@@ -11,9 +12,9 @@ export default class CrearRolComponent extends Component {
       responsabilidades: "",
     };
     this.changeIdHandler = this.changeIdHandler.bind(this);
-    this.changeResponsabilidadesHandler = this.changeResponsabilidadesHandler.bind(this);
-    this.crearRol = this.crearRol.bind(this)
-
+    this.changeResponsabilidadesHandler =
+      this.changeResponsabilidadesHandler.bind(this);
+    this.crearRol = this.crearRol.bind(this);
   }
 
   crearRol = (e) => {
@@ -26,18 +27,19 @@ export default class CrearRolComponent extends Component {
     servicioRoles.crearRol(rol).then((res) => {
       window.location.href = "/roles";
     });
-  }
+  };
   changeIdHandler = (event) => {
     this.setState({ id: event.target.value });
-  }
+  };
 
   changeResponsabilidadesHandler = (event) => {
     this.setState({ responsabilidades: event.target.value });
-  }
+  };
 
   render() {
     return (
       <div>
+        <HeaderComponent />
         <div>
           <div className="container">
             <div className="row">
@@ -67,6 +69,7 @@ export default class CrearRolComponent extends Component {
                     </div>
                     <button
                       className="btn btn-success"
+                      style={{ marginTop: "10px" }}
                       onClick={this.crearRol}
                     >
                       Guardar Rol
@@ -75,7 +78,7 @@ export default class CrearRolComponent extends Component {
                     <Link to="/roles">
                       <button
                         className="btn btn-danger"
-                        style={{ marginLeft: "10px" }}
+                        style={{ marginLeft: "10px", marginTop: "10px" }}
                       >
                         Regresar
                       </button>
@@ -87,6 +90,6 @@ export default class CrearRolComponent extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

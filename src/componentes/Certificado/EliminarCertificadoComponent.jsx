@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import servicioEmpleado from "../../servicios/ServicioEmpleado";
+import servicioCertificado from "../../servicios/ServicioCertificado";
 
-export default class EliminarEmpleadoComponent extends Component {
+export default class EliminarCertificadoComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -12,18 +12,18 @@ export default class EliminarEmpleadoComponent extends Component {
       id: "",
     };
     this.changeIdHandler = this.changeIdHandler.bind(this);
-    this.eliminarEmpleado = this.eliminarEmpleado.bind(this);
+    this.EliminarCertificado = this.EliminarCertificado.bind(this);
   }
 
   changeIdHandler = (event) => {
     this.setState({ id: event.target.value });
   };
 
-  eliminarEmpleado = (e) => {
+  EliminarCertificado = (e) => {
     e.preventDefault();
-    console.log("empleado => " + this.state.id);
-    servicioEmpleado.eliminarEmpleado(this.state.id).then((res) => {
-      window.location.href = "/empleados";
+    console.log("certificado => " + this.state.id);
+    servicioCertificado.eliminarCertificado(this.state.id).then((res) => {
+      window.location.href = "/certificados";
     });
   };
 
@@ -34,7 +34,7 @@ export default class EliminarEmpleadoComponent extends Component {
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">
-              <h3 className="text-center">Eliminar Empleado</h3>
+              <h3 className="text-center">Eliminar Certificado</h3>
               <div className="card-body">
                 <form>
                   <div className="form-group">
@@ -51,12 +51,12 @@ export default class EliminarEmpleadoComponent extends Component {
                   <button
                     className="btn btn-success"
                     style={{ marginTop: "10px" }}
-                    onClick={this.eliminarEmpleado}
+                    onClick={this.eliminarCertificado}
                   >
-                    Eliminar empleado
+                    Eliminar certificado
                   </button>
 
-                  <Link to="/empleados">
+                  <Link to="/certificados">
                     <button
                       className="btn btn-danger"
                       style={{ marginLeft: "10px", marginTop: "10px" }}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ServicioEmpleado from "../../servicios/ServicioEmpleado";
+import HeaderComponent from "../HeaderComponent";
 // eslint-disable-next-line
 import {BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -27,6 +28,7 @@ class ListaEmpleados extends Component {
   render() {
     return (
       <div>
+        <HeaderComponent />
         <h2 className="text-center">Lista Empleados</h2>
         <div className="row">
           <button className="btn btn-primary" onClick={() => this.crearEmpleado("1367")}>

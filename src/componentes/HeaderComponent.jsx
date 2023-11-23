@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class HeaderComponent extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +37,7 @@ class HeaderComponent extends Component {
                 Certificados
               </a>
             </div>
-            <div style={{ marginLeft: "1380px" }}>
+            <div style={{ marginLeft: "730px" }}>
               <a href="/login" className="nav-brand">
                 Inicio de Sesion
               </a>
